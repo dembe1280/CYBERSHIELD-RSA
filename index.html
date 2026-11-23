@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CyberShield RSA helps South Africans understand suspicious links, messages and online threats.">
+  <title>CyberShield RSA — Think Before You Click</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="CyberShield RSA home">
+      <span class="brand-mark">⬡<b>⌑</b></span>
+      <span><strong>CyberShield <em>RSA</em></strong><small>Think Before You Click.</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a class="active" href="#home">Home</a>
+      <a href="#tools">Tools</a>
+      <a href="#how">How it works</a>
+      <a href="#about">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch colour theme"><span id="themeIcon">☾</span><span id="themeLabel">Dark mode</span></button>
+      <a class="button button-small" href="#tools">Get started <span>→</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> A cybersecurity companion for South Africa</div>
+        <h1>Stay safe online.<br>Stay one step ahead with <span>CyberShield RSA.</span></h1>
+        <p>Check suspicious links, make sense of strange messages and learn how to protect yourself online.</p>
+        <div class="hero-actions">
+          <a class="button" href="#tools">Explore security tools <span>→</span></a>
+          <a class="button button-quiet" href="#how">How it works</a>
+        </div>
+        <div class="hero-note"><span class="mini-shield">✓</span> Clear explanations. Practical advice. Your privacy comes first.</div>
+      </div>
+      <div class="hero-art" aria-label="Cybersecurity shield illustration">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="shield"><div class="shield-lock">▣</div></div>
+        <div class="art-caption">THINK BEFORE<br>YOU CLICK.</div>
+        <span class="art-spark spark-one">✳</span><span class="art-spark spark-two">＋</span>
+      </div>
+    </section>
+
+    <section class="tools-section section-wrap" id="tools">
+      <div class="section-heading">
+        <div><span class="section-kicker">YOUR FIRST LINE OF DEFENCE</span><h2>Security tools</h2><p>Choose what you want to check. We'll guide you through it.</p></div>
+        <span class="availability"><i></i> Website prototype</span>
+      </div>
+      <div class="tool-grid">
+        <button class="tool-card" data-tool="url"><span class="tool-icon blue">↗</span><strong>URL scanner</strong><span>Check a link for warning signs and known threats.</span><b class="card-arrow">→</b></button>
+        <button class="tool-card" data-tool="message"><span class="tool-icon orange">✉</span><strong>Scam message checker</strong><span>Review suspicious SMS or WhatsApp messages.</span><b class="card-arrow">→</b></button>
+        <button class="tool-card" data-tool="email"><span class="tool-icon purple">＠</span><strong>Phishing email checker</strong><span>Look for impersonation and phishing clues.</span><b class="card-arrow">→</b></button>
+        <button class="tool-card" data-tool="phone"><span class="tool-icon green">⌕</span><strong>Phone number checker</strong><span>Look up community-reported suspicious numbers.</span><b class="card-arrow">→</b></button>
+        <button class="tool-card" data-tool="password"><span class="tool-icon blue">▣</span><strong>Password check</strong><span>Assess password strength privately in your browser.</span><b class="card-arrow">→</b></button>
+      </div>
+    </section>
+
+    <section class="workspace section-wrap" id="workspace" hidden>
+      <div class="workspace-top"><div><span class="section-kicker">SECURITY CHECK</span><h2 id="workspaceTitle">URL scanner</h2><p id="workspaceDescription">Paste a link you'd like to review.</p></div><button class="text-button" id="closeWorkspace">Close ×</button></div>
+      <form id="scanForm" class="scan-form">
+        <label id="inputLabel" for="scanInput">Suspicious link</label>
+        <textarea id="scanInput" rows="3" placeholder="Paste the link here. Do not open it first." required></textarea>
+        <div class="form-foot"><small id="privacyHint">Do not include passwords, OTPs or private account details.</small><button class="button" type="submit">Review input <span>→</span></button></div>
+      </form>
+      <div class="prototype-notice" id="prototypeNotice"><strong>Prototype notice</strong><p>This interface is ready, but live threat checks are not connected yet. We will not invent a safety score or label anything safe without checking trusted threat-intelligence sources.</p></div>
+    </section>
+
+    <section class="how-section section-wrap" id="how">
+      <div class="how-intro"><span class="section-kicker">SIMPLE BY DESIGN</span><h2>Know what you're dealing with.</h2><p>Cybersecurity shouldn't feel complicated. Our goal is to turn technical signals into advice that makes sense.</p></div>
+      <div class="steps">
+        <article><span>01</span><h3>Share what looks suspicious</h3><p>Paste a link, message, email or phone number into the relevant checker.</p></article>
+        <article><span>02</span><h3>Check the evidence</h3><p>Our planned engine will compare available signals with trusted security sources.</p></article>
+        <article><span>03</span><h3>Understand your next step</h3><p>Get a plain-language explanation and practical steps to reduce your risk.</p></article>
+      </div>
+    </section>
+
+    <section class="about-band section-wrap" id="about">
+      <div class="about-symbol">✳</div><div><span class="section-kicker">BUILT WITH SOUTH AFRICA IN MIND</span><h2>A safer digital community starts with awareness.</h2><p>CyberShield RSA is being developed to help people and small businesses recognise online threats and make more informed decisions.</p></div>
+      <div class="about-tag">Privacy first<br><strong>Always.</strong></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">⬡<b>⌑</b></span><span><strong>CyberShield <em>RSA</em></strong><small>Think Before You Click.</small></span></a><span>© <span id="year"></span> CyberShield RSA. Built for a safer South Africa.</span><a href="#home">Back to top ↑</a></footer>
+  <script src="app.js"></script>
+</body>
+</html>
