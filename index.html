@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg" type="image/svg+xml">
+  <meta name="description" content="CyberShield RSA helps people review suspicious links, messages, emails and phone numbers. Runs entirely in your browser.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://safebrowsing.googleapis.com; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'">
+  <title>CyberShield RSA: Think Before You Click</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false"><defs>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+  <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="4.5"/><path d="m10.7 12.3 9.8-9.8M16 7l3 3M18.5 4.5l2 2"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3z"/><path d="M12 9v4M12 17h.01"/></symbol>
+  <symbol id="i-octagon" viewBox="0 0 24 24"><path d="M7.86 2h8.28L22 7.86v8.28L16.14 22H7.86L2 16.14V7.86z"/><path d="M12 8v4M12 16h.01"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+</defs></svg>
+
+<header class="topbar" id="topbar">
+  <div class="bar wrap">
+    <a class="brand" href="#top"><span class="brand-mark"><svg class="ic"><use href="#i-shield-check"/></svg></span><span class="brand-text">CyberShield <b>RSA</b></span></a>
+    <nav id="siteNav" aria-label="Main">
+      <a href="#tools">Security tools</a><a href="#how">How it works</a><a href="#about">About</a>
+      <a class="nav-cta" href="#tools">Start a check</a>
+    </nav>
+    <div class="bar-actions">
+      <button id="themeToggle" class="icon-button" type="button" aria-label="Switch theme"></button>
+      <button id="menuToggle" class="icon-button menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav"></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero wrap">
+  <p class="eyebrow">Digital safety, made simple</p>
+  <h1>Pause. Check. <span>Stay protected.</span></h1>
+  <p class="hero-lead">Review suspicious links, messages, emails and phone numbers before they catch you out. Clear results, honest limits.</p>
+  <ul class="trust-row">
+    <li><svg class="ic"><use href="#i-lock"/></svg>Runs in your browser</li>
+    <li><svg class="ic"><use href="#i-shield-check"/></svg>No account needed</li>
+    <li><svg class="ic"><use href="#i-info"/></svg>Never says "safe" without proof</li>
+  </ul>
+</section>
+
+<section class="wrap" id="tools">
+  <div class="tabs" role="tablist" aria-label="Security tools">
+    <button class="tab active" data-tool="url" type="button" role="tab"><svg class="ic"><use href="#i-link"/></svg><span>URL scanner</span></button>
+    <button class="tab" data-tool="message" type="button" role="tab"><svg class="ic"><use href="#i-message"/></svg><span>Message</span></button>
+    <button class="tab" data-tool="email" type="button" role="tab"><svg class="ic"><use href="#i-mail"/></svg><span>Email</span></button>
+    <button class="tab" data-tool="phone" type="button" role="tab"><svg class="ic"><use href="#i-phone"/></svg><span>Caller ID</span></button>
+    <button class="tab" data-tool="password" type="button" role="tab"><svg class="ic"><use href="#i-key"/></svg><span>Password</span></button>
+  </div>
+
+  <div class="workspace" id="workspace">
+    <div class="workspace-head"><h2 id="toolTitle">URL scanner</h2><p id="toolDescription"></p></div>
+    <form id="toolForm" autocomplete="off">
+      <label id="inputLabel" for="toolInput">Website URL</label>
+      <textarea id="toolInput" rows="2" placeholder="https://example.com" required></textarea>
+
+    <div class="tool-extra" id="extra-phone" hidden>
+      <p>Your caller book lives only on this device. Add a name and label, then save it, so the number is recognised next time you look it up.</p>
+      <div class="extra-row">
+        <input type="text" id="callerName" placeholder="Name or label (optional), e.g. Dr Naidoo" aria-label="Name or label" maxlength="60">
+        <select id="reportCategory" aria-label="Label">
+          <option value="safe">Known / trusted</option><option value="spam">Spam</option><option value="telemarketer">Telemarketer</option><option value="impersonation">Impersonation</option><option value="payment_scam">Payment scam</option><option value="harassment">Harassment</option><option value="other">Other</option>
+        </select>
+      </div>
+      <div class="extra-row">
+        <button type="button" class="button button-secondary" id="reportButton">Save to my caller book</button>
+        <button type="button" class="button button-secondary" id="shareButton">Share a report</button>
+      </div>
+      <p><button type="button" class="link-button" id="exportBook">Export</button> · <button type="button" class="link-button" id="importBook">Import</button> · <button type="button" class="link-button" id="clearReports">Clear caller book</button> <span id="bookCount"></span></p>
+      <input type="file" id="importFile" accept="application/json,.json" hidden>
+    </div>
+
+    <details class="tool-extra" id="extra-url">
+      <summary>Optional: add Google Safe Browsing</summary>
+      <p>Without a key, the scanner uses local checks only. If you have your own Google Safe Browsing API key, you can add it to also check the link against Google's threat lists. The key is stored only in this browser, and the link is sent to Google when you check. Use a key restricted to your site's domain, and never paste a key you cannot afford to expose.</p>
+      <div class="extra-row">
+        <input type="password" id="gsbKey" placeholder="Your Google Safe Browsing API key" aria-label="Google Safe Browsing API key" autocomplete="off">
+        <button type="button" class="button button-secondary" id="saveKey">Save key</button>
+        <button type="button" class="button button-secondary" id="removeKey" hidden>Remove key</button>
+      </div>
+    </details>
+
+    <div class="form-foot"><small id="inputHint"></small><button class="button button-primary" id="submitButton" type="submit"></button></div>
+    </form>
+    <div id="result" class="result-box info" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="wrap how-section" id="how">
+  <h2 class="section-title">How it works</h2>
+  <div class="steps">
+    <article><span>1</span><h3>Share what looks suspicious</h3><p>Enter a link, message, email or number. Leave out passwords, OTPs and private details.</p></article>
+    <article><span>2</span><h3>We review the signals</h3><p>Transparent checks run in your browser. Nothing is uploaded unless you add your own Google key.</p></article>
+    <article><span>3</span><h3>You decide what to do</h3><p>Red means danger. Treat a clean result as "nothing obvious", never as a guarantee.</p></article>
+  </div>
+</section>
+
+<section class="wrap" id="about">
+  <div class="note-card"><svg class="ic"><use href="#i-alert"/></svg><div><b>Remember</b><p>No scanner catches every scam. Never share your banking PIN, password or one-time PIN. If money is at risk, call your bank on the number printed on your card.</p></div></div>
+</section>
+</main>
+<footer class="wrap"><span class="brand-text">CyberShield <b>RSA</b></span><span>Built to help South Africans make safer online decisions.</span><span>&copy; <span id="year"></span> CyberShield RSA</span></footer>
+<script src="app.js"></script>
+</body></html>
